@@ -1,17 +1,75 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
+    <ion-title style="text-align: center" size="large">
+      Afspraak Maken
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <form action="">
+    <ion-slides pager="true" options="slideOpts" #slides>
+      <ion-slide>
+        <ion-card>
+          <h1>Kies je Consulent</h1>
+          <ion-select name="consulent" placeholder="Kies je consulent">
+            <ion-select-option value="Tim">Tim</ion-select-option>
+            <ion-select-option value="Aswin">Aswin</ion-select-option>
+            <ion-select-option value="Matthijs">Matthijs</ion-select-option>
+            <ion-select-option value="Hugo">Hugo</ion-select-option>
+            <ion-select-option value="Ilyas">Ilyas</ion-select-option>
+          </ion-select>
+          <ion-button class="right" (click)="slides.slideNext()">Volgende</ion-button>
+        </ion-card>
+      </ion-slide>
 
+      <ion-slide>
+        <ion-card>
+        <h1>Datum en Tijd</h1>
+          <ion-item>
+            <ion-datetime id="Date&Time" name="Date&Time" placeholder="Kies Datum en Tijd" displayFormat="DD-MM-YYYY HH-mm"></ion-datetime>
+          </ion-item>
+          <ion-button class="right" (click)="slides.slideNext()">Volgende</ion-button>
+          <ion-button class="left" (click)="slides.slidePrev()">Terug</ion-button>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card>
+          <h1>Naam, Email & Telefoonnummer</h1>
+          <ion-item>
+            <ion-input id="naam" autocomplete="name" name="naam" type="name" placeholder="Naam" required="true"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input id="email" inputmode="email" autocomplete="email" minlength="5" name="email" type="email" placeholder="E-mail" required="true"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input id="telefoonnummer" inputmode="tel" autocomplete="tel" name="telefoonnummer" minlength="10" maxlength="10" type="tel" placeholder="Telefoonnummer" required="true"></ion-input>
+          </ion-item>
+          <ion-button class="right" (click)="slides.slideNext()">Volgende</ion-button>
+          <ion-button class="left" (click)="slides.slidePrev()">Terug</ion-button>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card>
+          <h1>Opmerking</h1>
+          <ion-item>
+            <ion-textarea class="comment" name="comment" clearOnEdit="true" spellcheck="true" auto-grow="true" placeholder="Zet hier je opmerking"></ion-textarea>
+          </ion-item>
+          <ion-button class="right" (click)="slides.slideNext()">Volgende</ion-button>
+          <ion-button class="left" (click)="slides.slidePrev()">Terug</ion-button>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card>
+          alle values moeten hier neer worden gezet, als een soort van overzicht.
+          <ion-button class="right" type="submit">Versturen</ion-button>
+          <ion-button class="left" (click)="slides.slidePrev()">Terug</ion-button>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </form>
   <app-explore-container name="Tab 2 page"></app-explore-container>
 </ion-content>
