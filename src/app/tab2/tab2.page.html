@@ -1,25 +1,21 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title style="text-align: center" size="large">
-      Afspraak Maken
-    </ion-title>
-  </ion-toolbar>
+<ion-header class="ion-no-border">
+  <ion-img alt="1:1 Diet logo" src="assets/logoDiet.svg" class="logo"></ion-img>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <form action="">
-    <ion-slides pager="true" options="slideOpts" #slides>
+    <ion-slides pager="true" [options]="slideOpts" #slides>
       <ion-slide>
         <ion-card>
           <h1>Kies je Consulent</h1>
-          <ion-select name="consulent" placeholder="Kies je consulent">
-            <ion-select-option value="Tim">Tim</ion-select-option>
-            <ion-select-option value="Aswin">Aswin</ion-select-option>
-            <ion-select-option value="Matthijs">Matthijs</ion-select-option>
-            <ion-select-option value="Hugo">Hugo</ion-select-option>
-            <ion-select-option value="Ilyas">Ilyas</ion-select-option>
+          <ion-select [(ngModel)]="model.consulent" [ngModelOptions]="{standalone: true}" class="pc" placeholder="Kies je consulent">
+            <ion-select-option>Tim</ion-select-option>
+            <ion-select-option>Hugo</ion-select-option>
+            <ion-select-option>Aswin</ion-select-option>
+            <ion-select-option>Ilyas</ion-select-option>
+            <ion-select-option>Matthijs</ion-select-option>
           </ion-select>
-          <ion-button class="right" (click)="slides.slideNext()">Volgende</ion-button>
+          <ion-button (click)="slides.slideNext()">Volgende</ion-button>
         </ion-card>
       </ion-slide>
 
@@ -27,10 +23,10 @@
         <ion-card>
         <h1>Datum en Tijd</h1>
           <ion-item>
-            <ion-datetime id="Date&Time" name="Date&Time" placeholder="Kies Datum en Tijd" displayFormat="DD-MM-YYYY HH-mm"></ion-datetime>
+            <ion-datetime [(ngModel)]="model.date" [ngModelOptions]="{standalone: true}" min="2021-05-27" max="2023-12-31" display-timezone="utc" placeholder="Kies Datum en Tijd" displayFormat="DD/MM/YYYY HH-mm"></ion-datetime>
           </ion-item>
-          <ion-button class="right" (click)="slides.slideNext()">Volgende</ion-button>
-          <ion-button class="left" (click)="slides.slidePrev()">Terug</ion-button>
+          <ion-button (click)="slides.slidePrev()">Terug</ion-button>
+          <ion-button (click)="slides.slideNext()">Volgende</ion-button>
         </ion-card>
       </ion-slide>
 
@@ -38,35 +34,40 @@
         <ion-card>
           <h1>Naam, Email & Telefoonnummer</h1>
           <ion-item>
-            <ion-input id="naam" autocomplete="name" name="naam" type="name" placeholder="Naam" required="true"></ion-input>
+            <ion-input [(ngModel)]="model.naam" [ngModelOptions]="{standalone: true}" id="naam" autocomplete="name" name="naam" type="name" placeholder="Naam" required="true"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input id="email" inputmode="email" autocomplete="email" minlength="5" name="email" type="email" placeholder="E-mail" required="true"></ion-input>
+            <ion-input [(ngModel)]="model.email" [ngModelOptions]="{standalone: true}" id="email" inputmode="email" autocomplete="email" minlength="5" name="email" type="email" placeholder="E-mail" required="true"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input id="telefoonnummer" inputmode="tel" autocomplete="tel" name="telefoonnummer" minlength="10" maxlength="10" type="tel" placeholder="Telefoonnummer" required="true"></ion-input>
+            <ion-input [(ngModel)]="model.nummer" [ngModelOptions]="{standalone: true}" id="telefoonnummer" inputmode="tel" autocomplete="tel" name="telefoonnummer" minlength="10" maxlength="10" type="tel" placeholder="Telefoonnummer" required="true"></ion-input>
           </ion-item>
-          <ion-button class="right" (click)="slides.slideNext()">Volgende</ion-button>
-          <ion-button class="left" (click)="slides.slidePrev()">Terug</ion-button>
+          <ion-button (click)="slides.slidePrev()">Terug</ion-button>
+          <ion-button (click)="slides.slideNext()">Volgende</ion-button>
         </ion-card>
       </ion-slide>
 
       <ion-slide>
         <ion-card>
           <h1>Opmerking</h1>
-          <ion-item>
-            <ion-textarea class="comment" name="comment" clearOnEdit="true" spellcheck="true" auto-grow="true" placeholder="Zet hier je opmerking"></ion-textarea>
+          <ion-item  id="comment">
+            <ion-textarea [(ngModel)]="model.comment" [ngModelOptions]="{standalone: true}" class="comment" name="comment" spellcheck="true" auto-grow="true" placeholder="Zet hier je opmerking"></ion-textarea>
           </ion-item>
-          <ion-button class="right" (click)="slides.slideNext()">Volgende</ion-button>
-          <ion-button class="left" (click)="slides.slidePrev()">Terug</ion-button>
+          <ion-button (click)="slides.slidePrev()">Terug</ion-button>
+          <ion-button (click)="slides.slideNext()">Volgende</ion-button>
         </ion-card>
       </ion-slide>
 
       <ion-slide>
         <ion-card>
-          alle values moeten hier neer worden gezet, als een soort van overzicht.
-          <ion-button class="right" type="submit">Versturen</ion-button>
-          <ion-button class="left" (click)="slides.slidePrev()">Terug</ion-button>
+          <ion-item>{{model.consulent}}</ion-item>
+          <ion-item>{{model.date}}</ion-item>
+          <ion-item>{{model.naam}}</ion-item>
+          <ion-item>{{model.email}}</ion-item>
+          <ion-item>{{model.nummer}}</ion-item>
+          <ion-item >{{model.comment}}</ion-item>
+          <ion-button (click)="slides.slidePrev()">Terug</ion-button>
+          <ion-button type="submit">Versturen</ion-button>
         </ion-card>
       </ion-slide>
     </ion-slides>

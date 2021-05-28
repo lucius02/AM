@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import { Slides } from 'ionic-angular/umd';
+import {ModelAfspraak} from '../model/model.afspraak';
 
 @Component({
   selector: 'app-tab2',
@@ -7,14 +7,25 @@ import { Slides } from 'ionic-angular/umd';
   styleUrls: ['tab2.page.scss']
 })
 
-export class SlideExample {
+export class Tab2Page {
   // Optional parameters to pass to the swiper instance.
   // See http://idangero.us/swiper/api/ for valid options.
-
   slideOpts = {
     initialSlide: 0,
     speed: 400,
     allowTouchMove: false
   };
-  constructor() {}
+
+  consulent = [];
+  date = [];
+  naam = [];
+  email = [];
+  nummer = [];
+  comment = [];
+
+  model = new ModelAfspraak(this.consulent, this.date, this.naam, this.email, this.nummer, this.comment);
+
+  submitted = false;
+
+  onSubmit() { this.submitted = true; }
 }
