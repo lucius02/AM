@@ -1,5 +1,5 @@
 <ion-header class="ion-no-border">
-  <ion-img alt="1:1 Diet logo" src="assets/logoDiet.svg" class="logo"></ion-img>
+  <ion-img alt="1:1 Diet logo" src="assets/logoDiet.svg" class="Logo"></ion-img>
 </ion-header>
 
 <ion-content [fullscreen]="true">
@@ -8,7 +8,7 @@
       <ion-slide>
         <ion-card>
           <h1>Kies je Consulent</h1>
-          <ion-select [(ngModel)]="model.consulent" [ngModelOptions]="{standalone: true}" class="pc" placeholder="Kies je consulent">
+          <ion-select [(ngModel)]="model.consulent" [ngModelOptions]="{standalone: true}" class="Consulent" placeholder="Kies je Consulent">
             <ion-select-option>Tim</ion-select-option>
             <ion-select-option>Hugo</ion-select-option>
             <ion-select-option>Aswin</ion-select-option>
@@ -34,13 +34,13 @@
         <ion-card>
           <h1>Naam, Email & Telefoonnummer</h1>
           <ion-item>
-            <ion-input [(ngModel)]="model.naam" [ngModelOptions]="{standalone: true}" id="naam" autocomplete="name" name="naam" type="name" placeholder="Naam" required="true"></ion-input>
+            <ion-input [(ngModel)]="model.naam" [ngModelOptions]="{standalone: true}" autocomplete="name" name="naam" type="name" placeholder="Naam" required="true"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input [(ngModel)]="model.email" [ngModelOptions]="{standalone: true}" id="email" inputmode="email" autocomplete="email" minlength="5" name="email" type="email" placeholder="E-mail" required="true"></ion-input>
+            <ion-input [(ngModel)]="model.email" [ngModelOptions]="{standalone: true}" inputmode="email" autocomplete="email" minlength="5" name="email" type="email" placeholder="E-mail" required="true"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input [(ngModel)]="model.nummer" [ngModelOptions]="{standalone: true}" id="telefoonnummer" inputmode="tel" autocomplete="tel" name="telefoonnummer" minlength="10" maxlength="10" type="tel" placeholder="Telefoonnummer" required="true"></ion-input>
+            <ion-input [(ngModel)]="model.nummer" [ngModelOptions]="{standalone: true}" inputmode="tel" autocomplete="tel" name="telefoonnummer" minlength="10" maxlength="10" type="tel" placeholder="Telefoonnummer" required="true"></ion-input>
           </ion-item>
           <ion-button (click)="slides.slidePrev()">Terug</ion-button>
           <ion-button (click)="slides.slideNext()">Volgende</ion-button>
@@ -50,8 +50,8 @@
       <ion-slide>
         <ion-card>
           <h1>Opmerking</h1>
-          <ion-item  id="comment">
-            <ion-textarea [(ngModel)]="model.comment" [ngModelOptions]="{standalone: true}" class="comment" name="comment" spellcheck="true" auto-grow="true" placeholder="Zet hier je opmerking"></ion-textarea>
+          <ion-item>
+            <ion-textarea [(ngModel)]="model.comment" [ngModelOptions]="{standalone: true}" class="Comment" name="comment" spellcheck="true" auto-grow="true" placeholder="Zet hier je opmerking"></ion-textarea>
           </ion-item>
           <ion-button (click)="slides.slidePrev()">Terug</ion-button>
           <ion-button (click)="slides.slideNext()">Volgende</ion-button>
@@ -60,6 +60,7 @@
 
       <ion-slide>
         <ion-card>
+          <h1>Overzicht</h1>
           <ion-item>{{model.consulent}}</ion-item>
           <ion-item>{{model.date}}</ion-item>
           <ion-item>{{model.naam}}</ion-item>
@@ -67,7 +68,7 @@
           <ion-item>{{model.nummer}}</ion-item>
           <ion-item >{{model.comment}}</ion-item>
           <ion-button (click)="slides.slidePrev()">Terug</ion-button>
-          <ion-button type="submit">Versturen</ion-button>
+          <ion-button (click)="onSubmit()" type="submit">Versturen</ion-button>
         </ion-card>
       </ion-slide>
     </ion-slides>

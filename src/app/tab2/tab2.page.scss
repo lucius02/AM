@@ -1,15 +1,9 @@
-.pc{
-  color: #2B2E6B;
-  background-color: #EABED7;
-  width: 100%;
-  height: 30%;
-  padding: 20px;
-  border-radius: 25px;
-  --placeholder-opacity: 1;
+ion-slide{
+  height: 60%;
 }
 
 ion-card{
-  height: 80%;
+  height: 60%;
   width: 80%;
   padding: 20px;
   margin: 10px;
@@ -34,21 +28,28 @@ ion-item{
 
 ion-input{
   color: #2B2E6B;
-  --placeholder-opacity: 1;
 }
 
 ion-datetime{
   color: #2B2E6B;
-  --placeholder-opacity: 1;
 }
 
-.comment{
+.Comment{
   min-height: 20%;
   max-height: 80%;
   color: #2B2E6B;
-  --placeholder-opacity: 1;
 }
 
-.logo {
+.Logo {
   width: 50%;
+}
+
+.Consulent{
+  color: #2B2E6B;
+  background-color: #EABED7;
+  width: 100%;
+  height: 30%;
+  padding: 20px;
+  border-radius: 25px;
+  --placeholder-opacity: 1;
 }

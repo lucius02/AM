@@ -8,8 +8,6 @@ import {ModelAfspraak} from '../model/model.afspraak';
 })
 
 export class Tab2Page {
-  // Optional parameters to pass to the swiper instance.
-  // See http://idangero.us/swiper/api/ for valid options.
   slideOpts = {
     initialSlide: 0,
     speed: 400,
