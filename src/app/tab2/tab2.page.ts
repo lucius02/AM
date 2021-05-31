@@ -8,6 +8,7 @@ import {ModelAfspraak} from '../model/model.afspraak';
 })
 
 export class Tab2Page {
+
   slideOpts = {
     initialSlide: 0,
     speed: 400,
