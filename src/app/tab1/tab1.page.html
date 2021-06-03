@@ -7,9 +7,20 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
-
-
-
+    <ion-item *ngFor="let afspraak of (afspraak| async)">
+      <ion-label class="ion-text-wrap">
+        <h2 style="font-weight: bold; margin-top: 10px">{{ afspraak.title }}</h2>
+        <h3>Voorbereiding:</h3>
+        <p> {{ afspraak.preparation }}</p>
+        <h3>Beschrijving:</h3>
+        <p>{{ afspraak.description }}</p>
+        <h3>Stap:</h3>
+        <p>{{ afspraak.step }}</p>
+        <h3>Personen:</h3>
+        <p>{{ afspraak.persons }}</p>
+        <h3>Ingrediënten:</h3>
+        <p>{{ afspraak.ingredients }}</p>
+      </ion-label>
+    </ion-item>
   <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>
