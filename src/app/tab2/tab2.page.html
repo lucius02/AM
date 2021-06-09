@@ -23,7 +23,7 @@
         <ion-card>
         <h1>Datum en Tijd</h1>
           <ion-item>
-            <ion-datetime [(ngModel)]="model.date" [ngModelOptions]="{standalone: true}" min="2021-05-27" max="2023-12-31" display-timezone="utc" placeholder="Kies Datum en Tijd" displayFormat="DD/MM/YYYY HH-mm"></ion-datetime>
+            <ion-datetime [(ngModel)]="model.datum_tijd" [ngModelOptions]="{standalone: true}" min="2021-05-27" max="2023-12-31" display-timezone="utc" placeholder="Kies Datum en Tijd" displayFormat="DD/MM/YYYY HH-mm"></ion-datetime>
           </ion-item>
           <ion-button (click)="slides.slidePrev()">Terug</ion-button>
           <ion-button (click)="slides.slideNext()">Volgende</ion-button>
@@ -40,7 +40,7 @@
             <ion-input [(ngModel)]="model.email" [ngModelOptions]="{standalone: true}" inputmode="email" autocomplete="email" minlength="5" name="email" type="email" placeholder="E-mail" required="true"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input [(ngModel)]="model.nummer" [ngModelOptions]="{standalone: true}" inputmode="tel" autocomplete="tel" name="telefoonnummer" minlength="10" maxlength="10" type="tel" placeholder="Telefoonnummer" required="true"></ion-input>
+            <ion-input [(ngModel)]="model.telefoonnummer" [ngModelOptions]="{standalone: true}" inputmode="tel" autocomplete="tel" name="telefoonnummer" minlength="10" maxlength="10" type="tel" placeholder="Telefoonnummer" required="true"></ion-input>
           </ion-item>
           <ion-button (click)="slides.slidePrev()">Terug</ion-button>
           <ion-button (click)="slides.slideNext()">Volgende</ion-button>
@@ -51,7 +51,7 @@
         <ion-card>
           <h1>Opmerking</h1>
           <ion-item>
-            <ion-textarea [(ngModel)]="model.comment" [ngModelOptions]="{standalone: true}" class="Comment" name="comment" spellcheck="true" auto-grow="true" placeholder="Zet hier je opmerking"></ion-textarea>
+            <ion-textarea [(ngModel)]="model.opmerking" [ngModelOptions]="{standalone: true}" class="Comment" name="opmerking" spellcheck="true" auto-grow="true" placeholder="Zet hier je opmerking"></ion-textarea>
           </ion-item>
           <ion-button (click)="slides.slidePrev()">Terug</ion-button>
           <ion-button (click)="slides.slideNext()">Volgende</ion-button>
@@ -62,11 +62,11 @@
         <ion-card>
           <h1>Overzicht</h1>
           <ion-item>{{model.consulent}}</ion-item>
-          <ion-item>{{model.date}}</ion-item>
+          <ion-item>{{model.datum_tijd}}</ion-item>
           <ion-item>{{model.naam}}</ion-item>
           <ion-item>{{model.email}}</ion-item>
-          <ion-item>{{model.nummer}}</ion-item>
-          <ion-item >{{model.comment}}</ion-item>
+          <ion-item>{{model.telefoonnummer}}</ion-item>
+          <ion-item >{{model.opmerking}}</ion-item>
           <ion-button (click)="slides.slidePrev()">Terug</ion-button>
           <ion-button (click)="onSubmit()" type="submit">
             Versturen

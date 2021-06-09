@@ -16,13 +16,13 @@ export class Tab2Page {
   };
 
   consulent = [];
-  date = [];
+  datum_tijd = [];
   naam = [];
   email = [];
-  nummer = [];
-  comment = [];
+  telefoonnummer = [];
+  opmerking = [];
 
-  model = new ModelAfspraak(this.consulent, this.date, this.naam, this.email, this.nummer, this.comment);
+  model = new ModelAfspraak(this.consulent, this.datum_tijd, this.naam, this.email, this.telefoonnummer, this.opmerking);
 
   submitted = false;
 

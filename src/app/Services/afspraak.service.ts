@@ -8,6 +8,6 @@ export class AfspraakService {
   constructor(private httpClient: HttpClient) { }
 
   getAfspraak() {
-    return this.httpClient.get('http://31.14.96.253/recipes');
+    return this.httpClient.get('http://31.14.96.253/afspraak');
   }
 }
