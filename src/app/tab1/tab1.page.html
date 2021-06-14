@@ -1,14 +1,14 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title style="text-align: center" size="large">
-      Afspraak Maken
+      Afspraak Bekijken
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
     <ion-item *ngFor="let afspraak of (afspraak| async)">
-      <ion-label class="ion-text-wrap">
+      <ion-label class="ion-text-wrap overview">
         <h2 style="font-weight: bold; margin-top: 10px">{{ afspraak.datum_tijd }}: {{ afspraak.consulent }}</h2>
         <h3>Naam:</h3>
         <p>{{ afspraak.naam }}</p>
